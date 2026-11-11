@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alkader Owner Dashboard - لوحة تحكم صاحب المنشأة</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,Tahoma,sans-serif;background:#F6F5F0;color:#1c1c1c}
+.topbar{background:#fff;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;padding:10px 16px;flex-wrap:wrap;gap:10px;position:sticky;top:0;z-index:20}
+.logo{font-weight:900;font-size:18px;letter-spacing:.5px}.logo span{color:#C9A227;display:block;font-size:10px;letter-spacing:2px}
+.search{background:#F6F5F0;border-radius:999px;padding:8px 14px;border:1px solid #eee;width:320px;max-width:90vw}
+.pill{background:#111;color:#fff;border-radius:999px;padding:6px 10px;font-size:12px}.pill.gold{background:#C9A227}
+.lang{display:flex;background:#F6F5F0;border-radius:999px;padding:3px}.lang b{background:#111;color:#fff;border-radius:999px;padding:5px 10px;font-size:12px}.lang span{padding:5px 10px;font-size:12px;color:#888}
+.layout{display:flex;max-width:1360px;margin:auto;gap:16px;padding:16px;align-items:flex-start}
+.sidebar{width:260px;background:#fff;border-radius:16px;padding:14px;border:1px solid #eee;position:sticky;top:70px;flex-shrink:0}
+.sidebar .box{background:#FFF8E1;border:1px solid #F0DF9A;border-radius:12px;padding:12px;font-size:12px;line-height:1.7;margin-bottom:12px}
+.sidebar .box b{color:#8A6D00}
+.menu{list-style:none}.menu li{padding:10px 10px;border-radius:10px;cursor:pointer;font-size:13px;display:flex;gap:8px;align-items:center}.menu li.active{background:#111;color:#fff;font-weight:800}.menu li:hover{background:#F6F5F0}.menu li.active:hover{background:#111}
+.main{flex:1;min-width:0}
+.hero{text-align:center;padding:6px 0 14px}.hero small{color:#C9A227;font-weight:800}.hero h1{font-size:36px;line-height:1.2;margin:6px 0}.hero p{color:#777;font-size:13px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}
+.btn{border:none;border-radius:999px;padding:9px 14px;cursor:pointer;font-weight:800;font-size:12px}.btn-gold{background:#C9A227;color:#fff}.btn-white{background:#fff;border:1px solid #E5E5E5}.btn-dark{background:#111;color:#fff}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.kpi{background:#fff;border:1px solid #eee;border-radius:16px;padding:14px;min-height:150px}.kpi .t{font-size:10px;color:#888;display:flex;justify-content:space-between}.kpi b{font-size:20px;display:block;margin:8px 0 4px;line-height:1.1}.kpi p{font-size:11px;color:#666;line-height:1.5}.kpi .edit{margin-top:10px;background:#F6F5F0;border:none;border-radius:999px;padding:6px 10px;font-size:11px;cursor:pointer}
+.charts{display:grid;grid-template-columns:1.6fr 1fr;gap:12px;margin-top:12px}
+.chart{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px}
+.bars{display:flex;align-items:flex-end;gap:10px;height:140px;margin-top:14px}.bar{flex:1;background:linear-gradient(#E8C84A,#C9A227);border-radius:8px 8px 0 0}
+.donut{width:120px;height:120px;border-radius:50%;background:conic-gradient(#C9A227 0 47%,#111 47% 68%,#E8C84A 68% 85%,#E5E5E5 85% 100%);display:flex;align-items:center;justify-content:center;margin:16px auto}.donut div{background:#fff;width:78px;height:78px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px}
+table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}th,td{padding:9px;border-bottom:1px solid #eee;text-align:right}th{background:#FFFBEB}
+input,select{padding:9px;border:1px solid #ddd;border-radius:10px;width:100%;margin:4px 0}
+.badge{background:#FFF0B8;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:800}
+@media(max-width:1000px){.kpis{grid-template-columns:repeat(3,1fr)}.charts{grid-template-columns:1fr}.sidebar{display:none}.hero h1{font-size:28px}}
+@media(max-width:600px){.kpis{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<div class="topbar">
+<div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;background:#C9A227;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900">S</div><div><b>Sabry</b><div style="font-size:11px;color:#888">Al-Rass - Head Office</div></div><span style="font-size:16px">🔔</span><span class="pill">Al-Rass — Head Office</span></div>
+<div style="display:flex;align-items:center;gap:10px"><div class="lang"><b>AR</b><span>EN</span></div><input class="search" placeholder="ابحث في المشاريع والاستفسارات والعملاء... 🔍"></div>
+<div class="logo">ALKADER ALMOHTARIF<span>الكادر المحترف</span></div>
+</div>
+
+<div class="layout">
+<aside class="sidebar">
+<div class="box"><b>⭐ فرع واحد - مكتب الرئيسي: الرس، القصيم</b><br>نخدم كل السعودية والخليج عند الطلب - بميزانية تبدأ من 100,000 ر.س</div>
+<ul class="menu">
+<li class="active">🏠 لوحة التحكم</li><li>👥 الموظفين والرواتب</li><li>🏗️ المشاريع</li><li>📩 الاستفسارات</li><li>💰 الحسابات / المالية</li><li>📦 التسويق / المتابعة</li><li>🏭 المخزون</li><li>📣 التسويق</li><li>👤 الفروع والصلاحيات</li><li>🗂️ لوحات الأقسام الأخرى</li><li>📊 التقارير</li><li>⚙️ الإعدادات</li>
+</ul>
+<div style="margin-top:12px;background:#F6F5F0;border-radius:12px;padding:12px;font-size:12px;text-align:center">🛡️ صاحب المنشأة<br><b>بيشوف كل حاجة</b></div>
+</aside>
+
+<main class="main">
+<div class="hero"><small>أهلاً بيك، سابري</small><h1>كل شيء، تحت تحكم واحد.</h1><p>الإيرادات والمدفوعات والعمال والمخزون والتسويق - تابع كل حاجة من هنا.</p></div>
+<div class="actions">
+<button class="btn btn-gold" onclick="addItem('مشروع')">+ إضافة مشروع</button><button class="btn btn-white" onclick="addItem('استفسار')">+ إضافة استفسار</button><button class="btn btn-white" onclick="addItem('فاتورة')">+ إضافة فاتورة</button><button class="btn btn-white" onclick="addItem('مصروف')">+ إضافة مصروف</button><button class="btn btn-white" onclick="addItem('مخزون')">+ إضافة مخزون</button><button class="btn btn-white" onclick="addItem('عميل')">+ إضافة عميل</button><button class="btn btn-white" onclick="addItem('موظف')">+ إضافة موظف</button><button class="btn btn-dark" onclick="alert('تم تجهيز رسالة جماعية للعملاء')">✉️ إرسال رسالة جماعية</button>
+</div>
+
+<div class="kpis">
+<div class="kpi"><div class="t"><span>12.4% ↑</span><span>💰</span></div><b>SAR<br>1,240,000</b><p>إجمالي الإيرادات<br>هذا الشهر - المبلغ الكلي</p><button class="edit" onclick="editVal(this)">✎ تعديل</button></div>
+<div class="kpi"><div class="t"><span>3 ↑</span><span>🏗️</span></div><b>18</b><p>المشاريع النشطة<br>7 في الموقع - 6 في المصنع</p><button class="edit" onclick="editVal(this)">✎ تعديل</button></div>
+<div class="kpi"><div class="t"><span>8 ↑</span><span>📩</span></div><b>32</b><p>استفسارات جديدة<br>هذا الأسبوع</p><button class="edit" onclick="editVal(this)">✎ تعديل</button></div>
+<div class="kpi"><div class="t"><span>6.1% ↓</span><span>🧾</span></div><b>SAR<br>385,000</b><p>المدفوعات المعلقة<br>3 مدفوعات</p><button class="edit" onclick="editVal(this)">✎ تعديل</button></div>
+<div class="kpi"><div class="t"><span>4.2% ↑</span><span>📐</span></div><b>SAR<br>742,000</b><p>قيمة المشروع<br>متوسط قيمة المشروع</p><button class="edit" onclick="editVal(this)">✎ تعديل</button></div>
+<div class="kpi"><div class="t"><span>18 ↑</span><span>👥</span></div><b>132</b><p>إجمالي الموظفين<br>المسجلون</p><button class="edit" onclick="editVal(this)">✎ تعديل</button></div>
+</div>
+
+<div class="charts">
+<div class="chart"><b>الإيرادات حسب الشهر</b><div style="font-size:11px;color:#888">من أغسطس، وكل شهر بيزيد</div><div class="bars"><div class="bar" style="height:45%"></div><div class="bar" style="height:60%"></div><div class="bar" style="height:55%"></div><div class="bar" style="height:75%"></div><div class="bar" style="height:85%"></div><div class="bar" style="height:70%"></div><div class="bar" style="height:95%"></div><div class="bar" style="height:100%"></div></div><div style="display:flex;justify-content:space-between;font-size:11px;color:#888;margin-top:6px"><span>يناير</span><span>فبراير</span><span>مارس</span><span>أبريل</span><span>مايو</span><span>يونيو</span><span>يوليو</span><span>أغسطس</span></div></div>
+<div class="chart"><b>حالة المشاريع</b><div style="font-size:11px;color:#888">47 مشروعاً قيد التنفيذ - 2025</div><div class="donut"><div>47</div></div><div style="font-size:12px;line-height:2">🟡 6 قيد التنفيذ<br>⚫ 7 في الموقع<br>🟢 32 تم التسليم</div></div>
+</div>
+
+<div class="chart" style="margin-top:12px"><b>💰 تحويل لمدير الحسابات</b><p style="font-size:12px;color:#666;margin:6px 0">رصيدك: <b id="owner">1,850,000 ر.س</b> | محفظة مدير الحسابات: <b id="wallet">240,000 ر.س</b></p><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="amt" type="number" placeholder="المبلغ - مثال 50000" style="max-width:200px"><select id="reason" style="max-width:200px"><option>رواتب</option><option>مصاريف مصنع</option><option>شراء خامات</option><option>سلفة</option></select><button class="btn btn-gold" onclick="transfer()">تحويل →</button></div>
+<table><thead><tr><th>الموظف</th><th>الوظيفة</th><th>الراتب</th><th>الحالة</th><th></th></tr></thead><tbody id="emps">
+<tr><td>أحمد - مدير الحسابات</td><td>مدير الحسابات</td><td>12,000</td><td><span class="badge">نشط</span></td><td><button onclick="editRow(this)">تعديل</button> <button onclick="pay(this)">صرف</button> <button onclick="del(this)">حذف</button></td></tr>
+<tr><td>سارة - محاسبة</td><td>محاسب</td><td>7,500</td><td><span class="badge">نشط</span></td><td><button onclick="editRow(this)">تعديل</button> <button onclick="pay(this)">صرف</button> <button onclick="del(this)">حذف</button></td></tr>
+<tr><td>خالد - مدير التسويق</td><td>مدير التسويق</td><td>11,000</td><td><span class="badge">نشط</span></td><td><button onclick="editRow(this)">تعديل</button> <button onclick="pay(this)">صرف</button> <button onclick="del(this)">حذف</button></td></tr>
+<tr><td>فاطمة - استقبال</td><td>استقبال طلبات</td><td>5,500</td><td><span class="badge">نشط</span></td><td><button onclick="editRow(this)">تعديل</button> <button onclick="pay(this)">صرف</button> <button onclick="del(this)">حذف</button></td></tr>
+</tbody></table>
+<button class="btn btn-gold" style="margin-top:10px" onclick="payAll()">صرف كل الرواتب</button></div>
+<p style="text-align:center;color:#999;font-size:12px;margin:14px">الكادر المحترف - الرس، القصيم | لوحة صاحب المنشأة بتشوف كل الأقسام - كل مدير هيشوف لوحته بس</p>
+</main></div>
+<script>
+let w=240000,o=1850000;
+function transfer(){let a=parseInt(document.getElementById('amt').value||0);if(!a) return alert('اكتب المبلغ');w+=a;o-=a;document.getElementById('wallet').innerText=w.toLocaleString()+' ر.س';document.getElementById('owner').innerText=o.toLocaleString()+' ر.س';alert('تم التحويل '+a.toLocaleString()+' لمدير الحسابات');}
+function del(b){if(confirm('متأكد تحذف؟')) b.closest('tr').remove();}
+function editRow(b){let n=prompt('عدل الاسم',b.closest('tr').cells[0].innerText);if(n) b.closest('tr').cells[0].innerText=n;}
+function pay(b){b.innerText='تم الصرف ✓';alert('تم صرف الراتب');}
+function payAll(){alert('تم صرف كل الرواتب');}
+function editVal(b){let v=prompt('عدل الرقم',b.parentElement.querySelector('b').innerText);if(v) b.parentElement.querySelector('b').innerText=v;}
+function addItem(t){let n=prompt('اسم '+t+' الجديد');if(n) alert('تم إضافة '+t+': '+n);}
+</script></body></html>
